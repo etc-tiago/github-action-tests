@@ -1,11 +1,14 @@
 name: CI
 
 on:
-  schedule:
-    # Runs every 12 minute past the 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 and 17th hour on Mon, Tue, Wed, Thu and Fri
-    - cron: "*/12 7-17 * * 1-5"
-    # Runs every 12 minute past the 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 and 17th hour on Sat
-    - cron: "*/12 7-17 * * 6"
+  push:
+    branches: 
+      - master
+#   schedule: # works!
+#     # Runs every 12 minute past the 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 and 17th hour on Mon, Tue, Wed, Thu and Fri
+#     - cron: "*/12 7-17 * * 1-5"
+#     # Runs every 12 minute past the 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 and 17th hour on Sat
+#     - cron: "*/12 7-17 * * 6"
       
 
 jobs:
