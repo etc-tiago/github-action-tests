@@ -1,0 +1,18 @@
+name: CI
+
+on:
+  schedule:
+    - cron: 12 7-19 * * 1-5 # Runs every 12th minute past the 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 and 17th hour on Mon, Tue, Wed, Thu and Fri
+    - cron: 12 7-17 * * 6 # Runs every 12th minute past the 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 and 17th hour on Sat
+      
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Check yarn is avaliable
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run yarn
+      run: yarn add prettier
